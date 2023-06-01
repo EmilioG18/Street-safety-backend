@@ -1,17 +1,22 @@
 package streetsafety.com.demo.entities;
 
-import jakarta.persistence.*;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 
+
+
+
+
+import javax.persistence.Entity;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "usuarios")
+@Table(name = "users")
 public class Usuario {
-    @Id
+   @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idUsuario;
-    @Column(name = "username",length = 30,nullable = false)
+   private int idUsuario;
+
+   @Column(name = "username",length = 30,nullable = false)
     private String username;
 
     @Column(name = "password",length = 30,nullable = false)
@@ -25,7 +30,7 @@ public class Usuario {
     @Column(name = "fecha_nacimiento",nullable = false)
     private LocalDate fecha_nacimiento;
 
-    public  Usuario(){
+    public Usuario(){
 
     }
     public Usuario(int idUsuario, String username, String password, String email, String nombres_usuario, String apellidos_usuario, LocalDate fecha_nacimiento) {
@@ -94,4 +99,3 @@ public class Usuario {
         this.fecha_nacimiento = fecha_nacimiento;
     }
 }
-
